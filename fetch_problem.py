@@ -195,6 +195,8 @@ def execute(app: CommandLineParser) -> None:
 
             write_all_text(os.path.join(
                 problem_dir, f"{problem['id']}.py"), content)
+            write_all_text(os.path.join(
+                problem_dir, f"README.md"), f"# {problem['name']}")
 
         print(problems_info)
 
