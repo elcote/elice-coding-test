@@ -80,7 +80,7 @@ def make_problem_content(template, problem: dict) -> str:
 
 
 def write_all_text(path: str, text: str) -> None:
-    f = open(path, 'w')
+    f = open(path, 'w', encoding='utf-8')
     f.write(text)
     f.close()
 
