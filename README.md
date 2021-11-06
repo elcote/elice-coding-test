@@ -28,7 +28,7 @@
 ```shell
 $ python fetch_problem.py -p 문제번호1 문제번호2 ... -n 자신의이름 -w (해당주차)
 
-   # ex:)
+# ex:)
 
 $ python fetch_problem.py -p 1068 1747 2960 -n "이름" -w "week3"
 ```
