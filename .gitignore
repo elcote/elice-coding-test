@@ -1,0 +1,9 @@
+# python 생성
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE 파일들
+.vscode/
+.idea
+
