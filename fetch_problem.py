@@ -188,15 +188,16 @@ def execute(app: CommandLineParser) -> None:
         problems_info = get_problems(problems)
         for problem in problems_info:
             content = make_problem_content(__template, problem)
+            dir_name = ''.join(x for x in problem['name'] if x.isalnum())
             problem_dir = os.path.join(
-                abs_week_dir, f"[{problem['id']}]{problem['name']}")
+                abs_week_dir, f"[{problem['id']}]{dir_name}")
             if not os.path.isdir(problem_dir):
                 os.mkdir(problem_dir)
 
             write_all_text(os.path.join(
                 problem_dir, f"{problem['id']}.py"), content)
             write_all_text(os.path.join(
-                problem_dir, f"README.md"), f"# {problem['name']}")
+                problem_dir, f"README.md"), f"# {dir_name}")
 
         print(problems_info)
 

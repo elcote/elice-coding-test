@@ -7,3 +7,6 @@ __pycache__/
 .vscode/
 .idea
 
+# 가상환경
+.venv/
+venv/
