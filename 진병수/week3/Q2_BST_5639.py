@@ -26,6 +26,7 @@ def solution(start, end):
 
     solution(start + 1, div - 1) # 분할 왼쪽
     solution(div, end)           # 분할 오른쪽
+    
     print(f'후위순회 tree[start]는 : {tree[start]} 입니다.')
     # print(tree[start])
 

@@ -21,7 +21,7 @@ input = sys.stdin.readline
 # 깊이 k 입력 받기
 k = int(input())
 
-# 전위 순회 결과 입력받기
+# 중위 순회 결과 입력받기
 _input = list(map(int, input().split()))
 
 # 빈 트리 2차원 배열로 할당

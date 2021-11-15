@@ -49,7 +49,8 @@ count = 0
 for i in range(len(arr)):
     if arr[i] != -2 and i not in arr:   # 여기서 리프 노드를 판단해야 한다. 
                                         # 해당 i 가 arr에 있다는 의미는 그 i를 부모로 하는 자식 노드가 있다는 말 (i가 부모노드라는 말)
-        print(f'i는 {i } i not in arr 의 정보입니다.: {i not in arr} 입니다.')
+                                        
+        print(f'i는 {i ,} i not in arr 의 정보입니다.: {i not in arr} 입니다.')
         
         count += 1                      # 리프 노드의 갯수를 카운트 해준다.
 print(count)
