@@ -26,12 +26,26 @@
     V부터 방문된 점을 순서대로 출력하면 된다.
 
 """
+
+'''
+- 예제 입력 -
+5 5 3
+5 4
+5 2
+1 2
+3 4
+3 1
+
+- 예제 출력 -
+3 1 2 5 4
+3 1 4 2 5
+'''
 import sys
 
 def input():
     return sys.stdin.readline()
 
-n, m, v = map(int, input().split())     # n: 정점의 개수(인덱스 번호로 대체), m: 간선의 개수, v: 시작 노드
+n, m, v = map(int, input().split())             # n: 정점의 개수(인덱스 번호로 대체), m: 간선의 개수, v: 시작 노드
 
 dict_graph = {i:[] for i in range(1, n+1)}      # dict_graph = {} 로 비어있는 dict로 선언시 백준에서 key error 발생!!!
 
@@ -42,13 +56,13 @@ for i in range(m):
     dict_graph[a].sort()                        # 문제에서 요구하는 사항 때문에, sort 과정을 반드시 해줘야한다.
     dict_graph[b].sort()
 
-# print(f"현재 graph 입니다. {dict_graph}")
+print(f"현재 graph 입니다. {dict_graph}")
 
 visited = []             # 방문 기록을 확인하기 위한 visited 리스트
 
-# print(f"현재 visited 입니다. {visited}")
+print(f"현재 visited 입니다. {visited}")
 
-def dfs(v):                             # dfs(재귀 이용)
+def dfs(v):              # dfs(재귀 이용)
     visited.append(v)
     
     # print(f"현재 시작점 v 입니다. {v}")
@@ -70,6 +84,6 @@ def bfs(v):             # bfs(큐를 이용한 반복문, deque 자료구조를 
                 visited.append(w)
     return visited
 
-print(*dfs(v))
+print(*dfs(v))  # * 전개 연산자
 print(*bfs(v))
 

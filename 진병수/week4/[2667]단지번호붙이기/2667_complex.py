@@ -60,7 +60,6 @@ print(f"현재 graph : {graph}")
 def dfs(x, y):                                      # dfs로 특정 노드를 방문하고 연결된 모든 노드들도 방문
     global cnt
     
-
     if x <= -1 or x >= n or y <= -1 or y >= n:      # 주어진 범위를 벗어나는 경우 즉시 종료
         return 0
     
@@ -73,10 +72,10 @@ def dfs(x, y):                                      # dfs로 특정 노드를 �
         dfs(x+1 ,y)
         dfs(x, y+1)
         return True
-
+        
     return 0
 
-for i in range(n):              # 모든 좌표를 돌면서 확인 작업
+for i in range(n):                # 모든 좌표를 돌면서 확인 작업
     for j in range(n):
         if graph[i][j] == True:   # 스타팅 포인트를 집어넣고 return 된 값이 1이라면(얼음 덩이 한개 완성)
             cnt = 0

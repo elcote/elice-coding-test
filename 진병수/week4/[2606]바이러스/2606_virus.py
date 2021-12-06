@@ -28,6 +28,21 @@
     => ★ visted 에 append 되어 있는 수 - 1 을 구하면 정답이 된다. ★
 """
 
+'''
+- 예제 입력  - 
+7
+6
+1 2
+2 3
+1 5
+5 2
+5 6
+4 7
+
+- 예제 출력  -
+4
+'''
+
 import sys 
 
 def input(): 
@@ -44,7 +59,7 @@ print(f"입력 전 dic 은 : {dic}")
 
 for j in range(m):                   # 입력된 연결관계 숫자만큼 입력하고 그만큼 반복하면서
     a, b = map(int,input().split())  # graph 에 대한 정보를 하나씩 입력받는다.
-    dic[a].add(b)                    # {노드번호:{연결된 노드, 연결된 노드}, } 형태로 생성됩니다. (set-set 형태)
+    dic[a].add(b)                    # {노드번호:{연결된 노드, 연결된 노드}, } 형태로 생성됩니다. (dict-dict 형태)
     dic[b].add(a)
 
 print(f"입력 후 dic 은 : {dic}")
