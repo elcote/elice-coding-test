@@ -9,10 +9,11 @@
 '''
 
 import sys
+from collections import Counter
 read = sys.stdin.readline
 
 n, m = map(int, read().split())
-trees = list(map(int, read().split()))  # 초기 int로 설정 안해줘서 오류났었음
+trees = Counter(map(int, read().split()))  # Counter 사용 안하면 시간 초과 오류남
 
 start, end = 1, max(trees)  # 시작 높이와 끝 높이 설정
 
@@ -21,11 +22,12 @@ while start <= end:
     mid = (start+end) // 2
     log = 0  # 잘라서 가져갈 통나무
 
-    for i in trees:
+    # 일반 list로 진행했을때와 Counter의 .items() 사용시 결과가 다른 이유 ?
+    for i, j in trees.items():
         # 나무의 높이가 mid값 보다 작을 경우
         if i >= mid:
             # 벌목된 나무 합
-            log += i - mid
+            log += (i-mid) * j
 
     # 벌목된 나무 합이 정답보다 크거나 같을 경우
     if log >= m:
@@ -33,6 +35,6 @@ while start <= end:
         start = mid + 1
     else:
         # 끝 값 감소
-        end = mid - 1
+        end = mid - 11
 
 print(end)
