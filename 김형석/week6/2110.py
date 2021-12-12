@@ -9,19 +9,23 @@ read = sys.stdin.readline
 
 n, c = map(int, read().split())
 houses = [int(read()) for _ in range(n)]
-answer = 0
 houses.sort()
-start, end = 1, houses[-1] - houses[0]
 
-while start <= end:
-    mid = (start+end) // 2
+start = 1
+end = houses[-1] - houses[0]
+
+answer = 0
+
+while (start <= end):
+    mid = (start+end)//2  # 해당 gap
     current = houses[0]
     count = 1  # 시작할때 1개
 
     for i in range(1, len(houses)):
-        if houses[i] >= current + mid:
+        if houses[i] >= current + mid:  # gap 이상
             count += 1
-            currnet = houses[i]
+            current = houses[i]
+
     if count >= c:
         start = mid + 1
         answer = mid
