@@ -22,7 +22,7 @@ while start <= end:
     mid = (start+end) // 2
     log = 0  # 잘라서 가져갈 통나무
 
-    # 일반 list로 진행했을때와 Counter의 .items() 사용시 결과가 다른 이유 ?
+    # 일반 list로 진행했을때와 Counter의 .items() 사용시 결과가 다른 이유 ?(시간 초과)
     for i, j in trees.items():
         # 나무의 높이가 mid값 보다 작을 경우
         if i >= mid:
@@ -35,6 +35,6 @@ while start <= end:
         start = mid + 1
     else:
         # 끝 값 감소
-        end = mid - 11
+        end = mid - 1
 
 print(end)
