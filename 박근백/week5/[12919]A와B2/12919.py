@@ -1,10 +1,10 @@
 import sys
 input = sys.stdin.readline
 
-def recur(depth, val, check):
+def recur(depth, val, is_turned):
     global ck
     if depth >= len(t):
-        if check:
+        if is_turned:
             if val == reversed_t:
                 ck = 1
         else:
@@ -18,12 +18,12 @@ def recur(depth, val, check):
     if val not in t and val not in reversed_t:
         return
 
-    if check:
-        recur(depth + 1, 'A' + val, check)
+    if is_turned:
+        recur(depth + 1, 'A' + val, is_turned)
     else:
-        recur(depth + 1, val + 'A', check)
+        recur(depth + 1, val + 'A', is_turned)
 
-    if check:
+    if is_turned:
         recur(depth + 1, "B" + val, False)
     else:
         recur(depth + 1, val + 'B', True)
