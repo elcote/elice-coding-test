@@ -113,10 +113,11 @@ start, end = 1, house[-1] - house[0]            # 최소 거리와 최대 거리
 while start <= end:                             # 이분탐색 알고리즘
     mid = (start+end) // 2
     
-    if router_counter(mid) >= c:
+    if router_counter(mid) >= c:                # c 개 만큼 설치할 수 있거나 더 설치할 수 있으면 start 거리을 늘린다.
         answer = mid
         start = mid + 1
-    elif router_counter(mid) >= c:
+
+    elif router_counter(mid) < c:               # c 개 만큼 설치할 수 없는 경우 end 거리를 줄인다.
         end = mid - 1
         
 print(answer)
